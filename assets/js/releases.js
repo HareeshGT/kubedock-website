@@ -2,7 +2,7 @@
   'use strict';
   const API = 'https://api.github.com/repos/HareeshGT/KubeDock/releases';
   const RELEASES_URL = 'https://github.com/HareeshGT/KubeDock/releases';
-  const CACHE_KEY = 'kubedock-public-releases-v1';
+  const CACHE_KEY = 'kubedock-public-releases-v2';
   const CACHE_TTL = 10 * 60 * 1000;
   const $ = id => document.getElementById(id);
   const platformRoot = $('platform-cards');
@@ -146,11 +146,8 @@
     loading = true;
     if (reset) { page = 1; hasMore = true; releases = []; }
     const cached = readCache();
-    if (!force && reset && cached?.fresh && cached.data.length) {
-      releases = cached.data; hasMore = false; cacheUsed = true;
-      setStatus('Showing recently cached public release data. Refresh to check GitHub again.', 'success');
-      renderAll(); loading = false; return;
-    }
+    // Always fetch current public release metadata on page load. A short-lived
+    // session cache can hide a release that was just promoted from prerelease.
     if (!releases.length) setStatus('Loading release information from GitHub…');
     try {
       const batch = await fetchPage(page);
