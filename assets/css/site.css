@@ -14,3 +14,23 @@
 @media(max-width:400px){.hero h1{font-size:39px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-visual{min-height:320px}.window-body{min-height:275px}.mock-row{gap:6px}.mock-row b{font-size:8px}.mock-row small{font-size:7px}.mock-row em{font-size:6px}.mock-heading h3{font-size:12px}.cluster-pill{font-size:7px}.mock-stats strong{font-size:10px}.hero-meta{gap:10px}.security-panel{grid-template-columns:1fr}.security-points{grid-column:auto}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
 :focus-visible{outline:2px solid #a89bff;outline-offset:3px}
+
+/* Mobile viewport alignment: prevent decorative elements from widening the page. */
+@media(max-width:760px){
+  html,body{width:100%;max-width:100%;overflow-x:clip}
+  .wrap{width:calc(100% - 34px);max-width:var(--max);margin-inline:auto}
+  main,.site-header,.site-footer,.section{min-width:0;max-width:100%}
+  .section-head,.feature-grid,.feature-card,.showcase-panel,.showcase-content,
+  .showcase-copy,.showcase-art,.ai-detail-grid,.integration-rail,
+  .security-panel,.start-panel,.faq-layout,.faq-list{min-width:0}
+  .section-head h2,.feature-card h3,.showcase-copy h3,.security-panel h2,
+  .start-panel h2,.faq-intro h2{overflow-wrap:anywhere}
+  .hero-visual{min-width:0;max-width:100%}
+  .orbit,.float-chip{pointer-events:none}
+}
+@media(max-width:400px){
+  .wrap{width:calc(100% - 28px)}
+  .feature-card,.showcase-content,.security-panel,.start-panel{padding:20px}
+  .showcase-art{padding:12px}
+}
+
