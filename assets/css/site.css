@@ -34,3 +34,38 @@
   .showcase-art{padding:12px}
 }
 
+
+
+/* Motion layer: subtle, GPU-friendly movement that respects accessibility settings. */
+@keyframes kd-gradient-drift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes kd-orbit-spin{from{rotate:0deg}to{rotate:360deg}}
+@keyframes kd-glow-pulse{0%,100%{opacity:.48;scale:1}50%{opacity:.85;scale:1.08}}
+@keyframes kd-rise-in{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes kd-soft-pop{0%{opacity:0;transform:translateY(10px) scale(.97)}100%{opacity:1;transform:translateY(0) scale(1)}}
+.gradient-text{background-size:200% 200%;animation:kd-gradient-drift 8s ease-in-out infinite}
+.brand-mark{transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s}
+.brand:hover .brand-mark{transform:rotate(-8deg) scale(1.08);box-shadow:0 7px 30px #7864f366}
+.hero-copy .eyebrow,.hero-copy h1,.hero-copy .hero-lede,.hero-copy .hero-actions,.hero-copy .hero-meta{animation:kd-rise-in .75s both}
+.hero-copy h1{animation-delay:.08s}.hero-copy .hero-lede{animation-delay:.16s}.hero-copy .hero-actions{animation-delay:.24s}.hero-copy .hero-meta{animation-delay:.32s}
+.orbit-one{animation:kd-orbit-spin 36s linear infinite}
+.orbit-two{animation:kd-orbit-spin 48s linear infinite reverse}
+.hero-visual:before{animation:kd-glow-pulse 7s ease-in-out infinite}
+.float-chip{transition:border-color .25s,box-shadow .25s}
+.float-chip:hover{border-color:#b4a8ff66;box-shadow:0 16px 48px #0007}
+.feature-card,.integration-rail>div,.security-panel,.start-panel,.showcase-panel{transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+.feature-card:hover{box-shadow:0 18px 45px #0003}
+.integration-rail>div{transition:transform .25s,border-color .25s,background .25s}
+.integration-rail>div:hover{transform:translateY(-4px);border-color:#9b8cff50;background:#171827}
+.button,.nav-download,.asset-download,.refresh-button,.showcase-tab{position:relative;overflow:hidden}
+.button:after,.nav-download:after,.asset-download:after{content:"";position:absolute;inset:0;transform:translateX(-120%);background:linear-gradient(110deg,transparent,rgba(255,255,255,.13),transparent);transition:transform .55s}
+.button:hover:after,.nav-download:hover:after,.asset-download:hover:after{transform:translateX(120%)}
+.showcase-content.active{animation:kd-soft-pop .42s ease both}
+.orb-ring{animation:kd-orbit-spin 18s linear infinite}
+.ring-b{animation-direction:reverse;animation-duration:13s}
+.tunnel-track i{animation:kd-dot-travel 2.4s ease-in-out infinite}
+.tunnel-track i:nth-child(2){animation-delay:.4s}.tunnel-track i:nth-child(3){animation-delay:.8s}
+@keyframes kd-dot-travel{0%,100%{opacity:.35;transform:translateX(-3px)}50%{opacity:1;transform:translateX(3px)}}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
