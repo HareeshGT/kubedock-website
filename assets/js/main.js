@@ -45,6 +45,12 @@
   });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const motionTargets = document.querySelectorAll(
+    '.feature-card, .section-head, .integration-rail > div, .ai-detail-list article, ' +
+    '.faq-list details, .security-panel, .start-panel, .showcase-panel, .install-note, ' +
+    '.platform-section, .releases-section'
+  );
+  motionTargets.forEach(element => element.classList.add('reveal'));
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && !reducedMotion) {
     const observer = new IntersectionObserver(entries => {
