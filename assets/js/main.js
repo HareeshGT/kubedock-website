@@ -46,18 +46,18 @@
 
   const video = document.querySelector('#product-video');
   const videoUnavailable = document.querySelector('#video-unavailable');
-  const videoDownload = document.querySelector('.video-download');
   if (video && videoUnavailable) {
-    video.addEventListener('canplay', () => {
-      video.hidden = false;
+    // Keep the player visible while metadata loads; preload="metadata" does not
+    // guarantee that the browser will emit "canplay" until playback is requested.
+    video.addEventListener('loadedmetadata', () => {
       videoUnavailable.hidden = true;
-      if (videoDownload) videoDownload.hidden = false;
-    }, { once: true });
-    video.addEventListener('error', () => {
-      video.hidden = true;
-      videoUnavailable.hidden = false;
-      if (videoDownload) videoDownload.hidden = true;
     });
+    video.addEventListener('error', () => {
+      videoUnavailable.hidden = false;
+    });
+
+    // The error event can fire before this deferred script attaches its listener.
+    if (video.error) videoUnavailable.hidden = false;
   }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
