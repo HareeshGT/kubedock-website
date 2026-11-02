@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#090a12">
-  <meta name="description" content="KubeDock is a desktop workspace for Kubernetes, virtual machines, SSH, remote files, Docker, and AI-assisted DevOps workflows.">
+  <meta name="description" content="KubeDock brings Kubernetes, Docker, SSH, remote files, AI-assisted operations and a mobile companion into one open-source desktop workspace.">
   <meta property="og:title" content="KubeDock — Your infrastructure, in one workspace">
   <meta property="og:description" content="Manage clusters, containers, remote systems and DevOps workflows from one desktop app.">
   <meta property="og:type" content="website"><meta property="og:url" content="https://github.com/HareeshGT/KubeDock">
@@ -80,6 +80,57 @@
 
     <section class="section ai-detail-section" id="ai-details"><div class="wrap ai-detail-grid"><div class="ai-detail-copy reveal"><div class="eyebrow">AI OPERATIONS CENTRE + OPS MIND</div><h2>AI that works with your operational guardrails.</h2><p class="lead">Get help investigating infrastructure issues while keeping review and control in the operator's hands.</p><p>Live investigations can collect bounded Kubernetes status, events, logs and metrics. Cross-system investigations may also collect a minimal host summary and Docker container inventory. The collector does not query Kubernetes Secret values, ConfigMap values, container environment variables or Docker logs.</p><a class="text-link" href="https://github.com/HareeshGT/KubeDock#ai-operations" target="_blank" rel="noopener noreferrer">Read the verified AI operations guide ↗</a></div><div class="ai-detail-list reveal"><article><span>01</span><div><h3>Read-only collection</h3><p>Start from supported pod log and Service Index workflows to gather relevant evidence.</p></div></article><article><span>02</span><div><h3>Local, opt-in runbooks</h3><p>When enabled, bounded Markdown or text excerpts can inform an investigation.</p></div></article><article><span>03</span><div><h3>Explicit hosted consent</h3><p>Hosted incident investigations require consent per investigation. Local-only settings block hosted model calls.</p></div></article><article><span>04</span><div><h3>Human-reviewed remediation</h3><p>Suggestions can prefill a proposal for review; the planner does not execute it on its own.</p></div></article><article><span>05</span><div><h3>Advisory right-sizing</h3><p>Optional historical Prometheus P95 data informs recommendations. The advisor never changes workload resources.</p></div></article></div></div></section>
 
+
+    <section class="section workflow-section" id="more-workflows">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div><div class="eyebrow">MORE THAN A CLUSTER VIEWER</div><h2>Built for the work<br><span class="muted">around the workload.</span></h2></div>
+          <p>Move from a plain-language request to a reviewed action, choose the AI setup that fits the task, or check your cluster from a phone while KubeDock stays connected.</p>
+        </div>
+        <div class="workflow-grid">
+          <article class="workflow-card reveal">
+            <div class="workflow-card-top"><span class="workflow-number">07 / OPS MIND</span><span class="workflow-icon">✳</span></div>
+            <h3>Describe the outcome. Keep control of the action.</h3>
+            <p>Use plain language to ask for common Kubernetes operations. KubeDock keeps its existing access checks, confirmation steps and verification safeguards in the loop.</p>
+            <div class="workflow-visual workflow-prompt-card" aria-label="Illustrative Ops Mind request">
+              <span class="workflow-visual-label">OPS MIND · EXAMPLE REQUEST</span>
+              <p class="workflow-prompt">“Scale the checkout deployment to 4 replicas.”</p>
+              <div class="workflow-visual-footer"><span>Proposed operation</span><span>Review first</span></div>
+            </div>
+          </article>
+          <article class="workflow-card reveal">
+            <div class="workflow-card-top"><span class="workflow-number">08 / MODEL CHOICE</span><span class="workflow-icon">◇</span></div>
+            <h3>Bring the model that fits the task.</h3>
+            <p>Configure Anthropic, Gemini, OpenAI, DeepSeek, Mistral, Groq or local Ollama. Choose providers per AI task profile and add custom model IDs for supported providers.</p>
+            <div class="workflow-visual workflow-provider-card" aria-label="Supported AI provider options">
+              <span class="workflow-visual-label">PROVIDER OPTIONS</span>
+              <div class="provider-pills"><span>Claude</span><span>Gemini</span><span>OpenAI</span><span>DeepSeek</span><span>Mistral</span><span>Groq</span><span>Ollama · Local</span></div>
+              <div class="workflow-visual-footer"><span>Task-specific profiles</span><span>Custom models</span></div>
+            </div>
+          </article>
+          <article class="workflow-card reveal" id="web-app">
+            <div class="workflow-card-top"><span class="workflow-number">09 / WEB COMPANION</span><span class="workflow-icon">⌁</span></div>
+            <h3>Your cluster view can travel with you.</h3>
+            <p>Open KubeDock’s mobile-friendly web companion for common Kubernetes tasks. It reuses the desktop app’s managed SSH session and protects sign-in with a rotating six-digit code.</p>
+            <div class="workflow-visual workflow-web-card" aria-label="Illustrative KubeDock Web companion preview">
+              <div class="phone-frame">
+                <div class="phone-speaker"></div>
+                <div class="phone-screen">
+                  <div class="phone-appbar"><span class="phone-mark">K</span><span>KubeDock Web</span><i></i></div>
+                  <div class="phone-label">CLUSTER OVERVIEW</div>
+                  <div class="phone-resource"><span>Workloads</span><b>Healthy</b></div>
+                  <div class="phone-resource"><span>Services</span><b>Explore</b></div>
+                  <div class="phone-resource"><span>Pod logs</span><b>View</b></div>
+                  <div class="phone-otp"><span>6-DIGIT OTP</span><b>••• •••</b><small>Rotates every 30 seconds</small></div>
+                </div>
+              </div>
+              <span class="phone-caption">Illustrative companion preview · remote access requires HTTPS</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section integrations-section"><div class="wrap"><div class="section-head reveal"><div><div class="eyebrow">WORKS WITH YOUR TOOLCHAIN</div><h2>Your tools stay <span class="muted">your tools.</span></h2></div><p>KubeDock works alongside the tools and credentials you already configure. Access is bounded by your environment's permissions.</p></div><div class="integration-rail reveal"><div><span class="integration-symbol">◈</span><b>Kubernetes</b><small>Cluster resources</small></div><div><span class="integration-symbol">▣</span><b>Docker</b><small>Remote containers</small></div><div><span class="integration-symbol">⌁</span><b>SSH / SFTP</b><small>Remote systems</small></div><div><span class="integration-symbol">⌘</span><b>kubectl</b><small>Cluster access</small></div><div><span class="integration-symbol">☁</span><b>AWS CLI</b><small>Configured identity</small></div><div><span class="integration-symbol">◷</span><b>Prometheus</b><small>Optional metrics input</small></div></div><p class="integration-note">Integration availability depends on the relevant feature, local tooling, configuration and permissions.</p></div></section>
 
     <section class="section security-section" id="security"><div class="wrap security-panel reveal"><div class="security-symbol">⌑</div><div><div class="eyebrow">CONTROL STAYS WITH YOU</div><h2>Infrastructure access deserves care.</h2><p>KubeDock uses the identities and permissions you configure for your systems. AI evidence collection is bounded, but redaction is best-effort — review what you share and never submit credential values.</p><a class="text-link" href="https://github.com/HareeshGT/KubeDock/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer">Read the security policy ↗</a></div><div class="security-points"><span><i></i> Existing permissions apply</span><span><i></i> Review before remediation</span><span><i></i> Private vulnerability reporting</span></div></div></section>
@@ -92,8 +143,11 @@
       <details><summary>Does AI automatically change my infrastructure?</summary><p>AI investigations and right-sizing recommendations are advisory. Remediation proposals require review, and the planner does not submit or execute the operation itself.</p></details>
       <details><summary>How does the lightweight installer differ?</summary><p>The Fast Installer bundles omit optional Qwen3-TTS/PyTorch and Qt WebEngine/Chromium components to reduce installation size. Some optional capabilities may therefore be unavailable in those bundles.</p></details>
       <details><summary>Where can I find all versions?</summary><p>Visit the <a href="downloads/">Downloads page</a> to load public GitHub Releases, inspect available assets and open the original release notes.</p></details>
+
+      <details><summary>Can I use KubeDock from a phone?</summary><p>Yes. KubeDock includes a mobile-friendly web companion that reuses the desktop app’s active SSH session. The desktop app must remain running; remote access requires HTTPS and sign-in uses a rotating six-digit TOTP.</p></details>
+      <details><summary>Which AI providers and models can I configure?</summary><p>KubeDock supports Anthropic, Google Gemini, OpenAI, DeepSeek, Mistral, Groq and local Ollama. You can choose providers for separate task profiles and add custom model IDs where supported.</p></details>
       <details><summary>How do I report a security vulnerability?</summary><p>Please report suspected vulnerabilities privately through the <a href="https://github.com/HareeshGT/KubeDock/security/advisories/new" target="_blank" rel="noopener noreferrer">GitHub security advisory form</a>, not through public issues.</p></details>
     </div></div></section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-top"><a class="brand" href="#top"><span class="brand-mark">K</span><span>KubeDock</span></a><p>One desktop workspace for cloud, Kubernetes and infrastructure operations.</p><div class="footer-links"><a href="#features">Features</a><a href="#ai-details">AI Operations</a><a href="downloads/">Downloads</a><a href="https://github.com/HareeshGT/KubeDock/blob/main/README.md">Documentation</a><a href="https://github.com/HareeshGT/KubeDock/releases">Changelog</a><a href="https://github.com/HareeshGT/KubeDock/security">Security</a><a href="https://github.com/HareeshGT/KubeDock/issues">Report an issue</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> KubeDock · MIT License</span><span>Made for the people who keep systems running.</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="site-footer"><div class="wrap footer-top"><a class="brand" href="#top"><span class="brand-mark">K</span><span>KubeDock</span></a><p>One desktop workspace for cloud, Kubernetes and infrastructure operations.</p><div class="footer-links"><a href="#features">Features</a><a href="#more-workflows">More workflows</a><a href="#ai-details">AI Operations</a><a href="downloads/">Downloads</a><a href="https://github.com/HareeshGT/KubeDock/blob/main/README.md">Documentation</a><a href="https://github.com/HareeshGT/KubeDock/releases">Changelog</a><a href="https://github.com/HareeshGT/KubeDock/security">Security</a><a href="https://github.com/HareeshGT/KubeDock/issues">Report an issue</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> KubeDock · MIT License</span><span>Made for the people who keep systems running.</span><a href="#top">Back to top ↑</a></div></footer>
 </body></html>
