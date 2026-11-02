@@ -42,7 +42,7 @@ GitHub's anonymous API rate limits apply. The refresh button bypasses the short 
 
 The repository root is the static site root and can be deployed to GitHub Pages, Cloudflare Pages, Netlify, or another static host. Configure the host to publish the repository root. No secret keys should be added to frontend files.
 
-For GitHub Pages, set the Pages source to the deployment branch/folder you choose and configure the site root to the `website` directory using your preferred deployment workflow. The included paths assume the site is served from the repository root; if deploying under a repository subpath, configure the hosting path accordingly.
+For GitHub Pages, select the repository root (`/`) as the publishing folder on the deployment branch using your preferred deployment workflow. The included paths assume the site is served from the repository root; if deploying under a repository subpath, configure the hosting path accordingly.
 
 ## Content accuracy
 
