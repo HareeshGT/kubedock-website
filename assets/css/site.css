@@ -105,3 +105,23 @@
 .phone-caption{max-width:100%;color:#7d849e;text-align:center;font:7px 'DM Mono',monospace}
 @media(max-width:980px){.workflow-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.workflow-card:last-child{grid-column:1/-1}.workflow-card:last-child .workflow-web-card{min-height:180px}}
 @media(max-width:620px){.workflow-grid{grid-template-columns:1fr}.workflow-card:last-child{grid-column:auto}.workflow-card>p{min-height:0}.workflow-section{padding:76px 0}.workflow-card{padding:21px}}
+
+
+/* Product walkthrough video */
+.video-section{padding-top:76px;padding-bottom:88px;border-top:1px solid #ffffff06;background:radial-gradient(ellipse at 50% 45%,#6454b714,transparent 62%)}
+.video-intro{display:grid;grid-template-columns:1fr .72fr;align-items:end;gap:38px;margin-bottom:26px}
+.video-intro h2{font-size:clamp(30px,4vw,43px);line-height:1.2;letter-spacing:-.06em;margin:14px 0 0}
+.video-intro>p{max-width:430px;margin:0 0 3px;color:#969db5;font-size:12px;line-height:1.9}
+.video-player-shell{position:relative;overflow:hidden;border:1px solid #a296ff35;border-radius:20px;background:#05060c;box-shadow:0 28px 75px #0007,0 0 55px #7567e51a}
+.product-video{display:block;width:100%;height:auto;max-height:74vh;aspect-ratio:16/9;background:#05060c;object-fit:contain}
+.video-footnote{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:14px;color:#858ca5;font:9px 'DM Mono',monospace}
+.video-footnote a{color:#b9adff;font-weight:500}
+.video-footnote a:hover{color:#fff}
+.video-footnote-dot{display:inline-block;width:6px;height:6px;margin-right:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px #65ddb077}
+@media(max-width:760px){
+  .video-section{padding:64px 0 70px}
+  .video-intro{grid-template-columns:1fr;gap:12px;margin-bottom:20px}
+  .video-intro>p{max-width:100%}
+  .video-player-shell{border-radius:13px}
+  .video-footnote{align-items:flex-start;flex-direction:column;gap:8px;line-height:1.7}
+}

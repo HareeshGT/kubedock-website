@@ -1,0 +1,37 @@
+name: Assemble product walkthrough assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/video-parts/**"
+
+permissions:
+  contents: write
+
+jobs:
+  assemble:
+    name: Assemble the MP4 and poster
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the website
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Reconstruct the optimized video assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/video
+          cat assets/video-parts/video/*.b64 | base64 --decode > assets/video/kubedock-ai-workspace.mp4
+          cat assets/video-parts/poster/*.b64 | base64 --decode > assets/video/ai-workspace-video-poster.jpg
+          test -s assets/video/kubedock-ai-workspace.mp4
+          test -s assets/video/ai-workspace-video-poster.jpg
+          rm -rf assets/video-parts
+          git add -A assets/video assets/video-parts
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Add optimized KubeDock AI Workspace walkthrough video"
+          git push origin HEAD:main

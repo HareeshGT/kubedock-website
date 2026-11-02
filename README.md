@@ -19,6 +19,7 @@ Opening the HTML files directly with `file://` may prevent the browser from call
 - Responsive landing page with accessible mobile navigation.
 - Product capability sections based on the repository README and security guidance.
 - Dedicated walkthroughs for Ops Mind, configurable AI providers and the mobile-friendly Web companion.
+- Embedded narrated AI Workspace walkthrough on the homepage, with a downloadable MP4.
 - Animated scroll reveals that respect `prefers-reduced-motion`.
 - Keyboard-operable showcase tabs and FAQ accordions.
 - Downloads page backed by the public GitHub Releases REST API.
@@ -27,6 +28,10 @@ Opening the HTML files directly with `file://` may prevent the browser from call
 - Loading, empty, rate-limit, API-error and cached-data states.
 - Safe text rendering for release notes; no remote release Markdown is injected as HTML.
 - No frontend frameworks, build step, API token or custom backend.
+
+## Product walkthrough video
+
+The homepage includes a responsive HTML5 video player for the narrated AI Workspace walkthrough. The optimized MP4 and its poster image are stored in `assets/video/` and are served directly by the static site.
 
 ## Release integration
 
