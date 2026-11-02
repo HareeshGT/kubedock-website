@@ -19,7 +19,7 @@ Opening the HTML files directly with `file://` may prevent the browser from call
 - Responsive landing page with accessible mobile navigation.
 - Product capability sections based on the repository README and security guidance.
 - Dedicated walkthroughs for Ops Mind, configurable AI providers and the mobile-friendly Web companion.
-- Responsive narrated AI Workspace video player on the homepage (expects `assets/video/kubedock-ai-workspace.mp4`; displays an upload note until that asset is present).
+- Separate homepage video slots for the full KubeDock application tour and the focused AI Workspace walkthrough.
 - Animated scroll reveals that respect `prefers-reduced-motion`.
 - Keyboard-operable showcase tabs and FAQ accordions.
 - Downloads page backed by the public GitHub Releases REST API.
@@ -29,9 +29,10 @@ Opening the HTML files directly with `file://` may prevent the browser from call
 - Safe text rendering for release notes; no remote release Markdown is injected as HTML.
 - No frontend frameworks, build step, API token or custom backend.
 
-## Product walkthrough video
+## Product walkthrough videos
 
-The homepage includes a responsive HTML5 video player wired to `assets/video/kubedock-ai-workspace.mp4`. The player shows a clear fallback message until the MP4 is added at that path; once present, playback and download controls activate automatically.
+The homepage has two distinct video sections: a full KubeDock application overview and a focused AI Workspace walkthrough. The full app video is stored through Git LFS at `assets/video/kubedock-explainer.mp4` and is served through GitHub's LFS media endpoint so the static page receives the actual MP4 rather than the small Git LFS pointer file. The AI Workspace clip is served from `assets/video/kubedock-ai-workspace.mp4`.
+
 
 ## Release integration
 

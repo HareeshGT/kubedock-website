@@ -44,21 +44,27 @@
     });
   });
 
-  const video = document.querySelector('#product-video');
-  const videoUnavailable = document.querySelector('#video-unavailable');
-  if (video && videoUnavailable) {
-    // Keep the player visible while metadata loads; preload="metadata" does not
-    // guarantee that the browser will emit "canplay" until playback is requested.
+  const videoPlayers = [
+    { videoId: 'full-app-video', fallbackId: 'full-app-video-unavailable' },
+    { videoId: 'product-video', fallbackId: 'video-unavailable' }
+  ];
+  videoPlayers.forEach(({ videoId, fallbackId }) => {
+    const video = document.getElementById(videoId);
+    const fallback = document.getElementById(fallbackId);
+    if (!video || !fallback) return;
+
+    // The player stays visible during metadata loading; show the fallback only
+    // when the browser reports a media error.
     video.addEventListener('loadedmetadata', () => {
-      videoUnavailable.hidden = true;
+      fallback.hidden = true;
     });
     video.addEventListener('error', () => {
-      videoUnavailable.hidden = false;
+      fallback.hidden = false;
     });
 
-    // The error event can fire before this deferred script attaches its listener.
-    if (video.error) videoUnavailable.hidden = false;
-  }
+    // Handle a media error that happened before this deferred script ran.
+    if (video.error) fallback.hidden = false;
+  });
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const motionTargets = document.querySelectorAll(
