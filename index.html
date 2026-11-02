@@ -67,16 +67,21 @@
           <p>Watch the walkthrough to understand the AI Workspace, evidence-based investigations, Watch mode, runbooks, resource right-sizing and human-reviewed remediation.</p>
         </div>
         <div class="video-player-shell reveal">
-          <video class="product-video" controls playsinline preload="metadata"
-            poster="assets/video/ai-workspace-video-poster.jpg"
+          <video id="product-video" class="product-video" controls playsinline preload="metadata" hidden
             aria-label="KubeDock AI Workspace product walkthrough">
             <source src="assets/video/kubedock-ai-workspace.mp4" type="video/mp4">
-            Your browser does not support HTML5 video. You can download the walkthrough below.
+            Your browser does not support HTML5 video.
           </video>
+          <div id="video-unavailable" class="video-unavailable" role="status" aria-live="polite">
+            <span class="video-unavailable-icon">▶</span>
+            <div class="eyebrow">KUBEDOCK WALKTHROUGH</div>
+            <h3>Video player is ready</h3>
+            <p>The MP4 still needs to be added to <code>assets/video/kubedock-ai-workspace.mp4</code> in this repository.</p>
+          </div>
         </div>
         <div class="video-footnote">
           <span><i class="video-footnote-dot"></i> 3-minute guided walkthrough · English narration</span>
-          <a href="assets/video/kubedock-ai-workspace.mp4" download>Download the video ↓</a>
+          <a class="video-download" href="assets/video/kubedock-ai-workspace.mp4" download hidden>Download the video ↓</a>
         </div>
       </div>
     </section>

@@ -44,6 +44,22 @@
     });
   });
 
+  const video = document.querySelector('#product-video');
+  const videoUnavailable = document.querySelector('#video-unavailable');
+  const videoDownload = document.querySelector('.video-download');
+  if (video && videoUnavailable) {
+    video.addEventListener('canplay', () => {
+      video.hidden = false;
+      videoUnavailable.hidden = true;
+      if (videoDownload) videoDownload.hidden = false;
+    }, { once: true });
+    video.addEventListener('error', () => {
+      video.hidden = true;
+      videoUnavailable.hidden = false;
+      if (videoDownload) videoDownload.hidden = true;
+    });
+  }
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const motionTargets = document.querySelectorAll(
     '.feature-card, .section-head, .integration-rail > div, .ai-detail-list article, ' +
