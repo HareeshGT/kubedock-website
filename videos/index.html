@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090a12">
+  <meta name="description" content="Watch KubeDock in action: the full application tour and the AI Workspace walkthrough, each under three minutes.">
+  <meta property="og:title" content="KubeDock Videos — Watch it in action">
+  <meta property="og:description" content="The full app tour and the AI Workspace walkthrough, in one place.">
+  <meta property="og:type" content="website">
+  <title>Videos — KubeDock</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/HareeshGT/KubeDock/main/KubeDock.ico">
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <link rel="stylesheet" href="../assets/css/videos.css">
+  <script defer src="../assets/js/main.js"></script>
+  <script defer src="../assets/js/videos.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="../" aria-label="KubeDock home"><span class="brand-mark">K</span><span>KubeDock</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation"><span></span><span></span></button>
+      <div class="nav-links" id="nav-links">
+        <a href="../#features">Features</a><a href="../#showcase">Explore</a><a href="./" aria-current="page" class="nav-current">Videos</a><a href="../#ai">AI Ops</a><a href="../#security">Security</a><a href="../#faq">FAQ</a>
+        <a class="nav-download" href="../downloads/">Downloads <span aria-hidden="true">↗</span></a>
+        <a class="icon-link" href="https://github.com/HareeshGT/KubeDock" target="_blank" rel="noopener noreferrer" aria-label="KubeDock on GitHub">↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="wrap videos-hero">
+      <a class="videos-back" href="../">← Back to KubeDock</a>
+      <div class="eyebrow"><span class="pulse"></span> VIDEO LIBRARY</div>
+      <h1>Watch KubeDock <span class="gradient-text">in action.</span></h1>
+      <p>Two short walkthroughs — one for the whole application, one for the AI Workspace. Pick where to start, or watch both.</p>
+      <div class="videos-meta"><span>▶ 2 walkthroughs</span><span>◷ Under 3 minutes each</span><span>↓ Free to download</span></div>
+    </section>
+
+    <section class="wrap theatre" aria-label="Video player">
+      <div class="theatre-main">
+        <div class="video-player-shell reveal">
+          <video id="stage-video" class="product-video" controls playsinline preload="metadata"
+            poster="../assets/img/poster-app-tour.jpg" aria-labelledby="now-title">
+            <source src="../assets/video/kubedock-explainer-web.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <div id="stage-fallback" class="video-unavailable" role="status" aria-live="polite" hidden>
+            <span class="video-unavailable-icon">!</span>
+            <div class="eyebrow">KUBEDOCK VIDEO</div>
+            <h3>We couldn't load this video</h3>
+            <p>Refresh the page and try again, or use the download link below.</p>
+          </div>
+        </div>
+
+        <div class="now-playing reveal">
+          <div class="eyebrow" id="now-kicker">01 · FULL APP TOUR</div>
+          <h2 id="now-title">The complete KubeDock experience</h2>
+          <p id="now-desc">Explore KubeDock as a whole — from the desktop workspace and infrastructure tools to the workflows that bring your day-to-day operations together.</p>
+          <div class="now-actions">
+            <a id="now-download" class="button button-primary button-small" href="../assets/video/kubedock-explainer-web.mp4" download="kubedock-app-tour.mp4">Download video <span aria-hidden="true">↓</span></a>
+            <a id="now-open" class="button button-quiet button-small" href="../assets/video/kubedock-explainer-web.mp4" target="_blank" rel="noopener noreferrer">Open in new tab <span aria-hidden="true">↗</span></a>
+            <button id="now-copy" class="button button-quiet button-small" type="button">Copy link <span aria-hidden="true">⧉</span></button>
+            <button id="now-next" class="button button-outline button-small" type="button" hidden>Watch next <span aria-hidden="true">→</span></button>
+          </div>
+          <span id="copy-status" class="sr-only" role="status" aria-live="polite"></span>
+        </div>
+      </div>
+
+      <aside class="playlist reveal" aria-label="All videos">
+        <div class="playlist-head"><span>All videos</span><span>2</span></div>
+        <button class="playlist-item" type="button" data-video="app-tour" aria-current="true">
+          <span class="playlist-thumb">
+            <img src="../assets/img/poster-app-tour.jpg" alt="" width="1280" height="720" loading="lazy">
+            <span class="duration">2:57</span><span class="thumb-play" aria-hidden="true">▶</span>
+          </span>
+          <span class="playlist-text">
+            <span class="playlist-row"><span class="playlist-kicker">01 · FULL APP TOUR</span><span class="now-badge"><i></i> Now playing</span></span><strong>The complete KubeDock experience</strong>
+            <small>The desktop workspace, infrastructure tools and everyday workflows.</small>
+          </span>
+          
+        </button>
+        <button class="playlist-item" type="button" data-video="ai-workspace" aria-current="false">
+          <span class="playlist-thumb">
+            <img src="../assets/img/poster-ai-workspace.jpg" alt="" width="1280" height="720" loading="lazy">
+            <span class="duration">2:55</span><span class="thumb-play" aria-hidden="true">▶</span>
+          </span>
+          <span class="playlist-text">
+            <span class="playlist-row"><span class="playlist-kicker">02 · AI WORKSPACE</span><span class="now-badge"><i></i> Now playing</span></span><strong>See how KubeDock fits together</strong>
+            <small>Evidence-based investigations, Watch mode, runbooks and reviewed remediation.</small>
+          </span>
+          
+        </button>
+      </aside>
+    </section>
+
+    <section class="wrap covers" aria-labelledby="covers-title">
+      <div class="section-head reveal"><div><div class="eyebrow">WHAT YOU'LL SEE</div><h2 id="covers-title">Pick the video <span class="muted">that fits your question.</span></h2></div><p>New to KubeDock? Start with the app tour. Already curious about AI-assisted operations? Jump straight to the AI Workspace.</p></div>
+      <div class="covers-grid">
+        <article class="cover-card reveal">
+          <span class="playlist-kicker">01 · FULL APP TOUR</span>
+          <h3>The whole application, end to end</h3>
+          <ul>
+            <li>The desktop workspace</li>
+            <li>Infrastructure tools in one place</li>
+            <li>Day-to-day operational workflows</li>
+          </ul>
+          <a class="text-link" href="#app-tour" data-play="app-tour">Play this video <span>↑</span></a>
+        </article>
+        <article class="cover-card reveal">
+          <span class="playlist-kicker">02 · AI WORKSPACE</span>
+          <h3>AI that keeps a human in the loop</h3>
+          <ul>
+            <li>The AI Workspace and evidence-based investigations</li>
+            <li>Watch mode and runbooks</li>
+            <li>Resource right-sizing</li>
+            <li>Human-reviewed remediation</li>
+          </ul>
+          <a class="text-link" href="#ai-workspace" data-play="ai-workspace">Play this video <span>↑</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section getting-started"><div class="wrap start-panel reveal"><div><div class="eyebrow">LIKE WHAT YOU SEE?</div><h2>Try it on your own<br><span class="gradient-text">infrastructure.</span></h2><p>Get a prebuilt bundle for your platform or explore the source and contribute.</p></div><div class="start-actions"><a class="button button-primary" href="../downloads/">Browse downloads <span>→</span></a><a class="button button-outline" href="https://github.com/HareeshGT/KubeDock" target="_blank" rel="noopener noreferrer">View source on GitHub ↗</a><small>Open source · MIT license</small></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="wrap footer-top"><a class="brand" href="../"><span class="brand-mark">K</span><span>KubeDock</span></a><p>One desktop workspace for cloud, Kubernetes and infrastructure operations.</p><div class="footer-links"><a href="../#features">Features</a><a href="./">Videos</a><a href="../#ai-details">AI Operations</a><a href="../downloads/">Downloads</a><a href="https://github.com/HareeshGT/KubeDock/blob/main/README.md">Documentation</a><a href="https://github.com/HareeshGT/KubeDock/releases">Changelog</a><a href="https://github.com/HareeshGT/KubeDock/blob/main/SECURITY.md">Security</a><a href="https://github.com/HareeshGT/KubeDock/issues">Report an issue</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> KubeDock · MIT License</span><span>See it before you install it.</span><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>

@@ -44,27 +44,10 @@
     });
   });
 
-  const videoPlayers = [
-    { videoId: 'full-app-video', fallbackId: 'full-app-video-unavailable' },
-    { videoId: 'product-video', fallbackId: 'video-unavailable' }
-  ];
-  videoPlayers.forEach(({ videoId, fallbackId }) => {
-    const video = document.getElementById(videoId);
-    const fallback = document.getElementById(fallbackId);
-    if (!video || !fallback) return;
-
-    // The player stays visible during metadata loading; show the fallback only
-    // when the browser reports a media error.
-    video.addEventListener('loadedmetadata', () => {
-      fallback.hidden = true;
-    });
-    video.addEventListener('error', () => {
-      fallback.hidden = false;
-    });
-
-    // Handle a media error that happened before this deferred script ran.
-    if (video.error) fallback.hidden = false;
-  });
+  // Old homepage video anchors now live on the Videos page.
+  if (document.querySelector('.hero') && /^#(video|full-app-tour)$/.test(location.hash)) {
+    location.replace('videos/#' + (location.hash === '#video' ? 'ai-workspace' : 'app-tour'));
+  }
 
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const motionTargets = document.querySelectorAll(

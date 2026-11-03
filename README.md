@@ -19,7 +19,7 @@ Opening the HTML files directly with `file://` may prevent the browser from call
 - Responsive landing page with accessible mobile navigation.
 - Product capability sections based on the repository README and security guidance.
 - Dedicated walkthroughs for Ops Mind, configurable AI providers and the mobile-friendly Web companion.
-- Separate homepage video slots for the full KubeDock application tour and the focused AI Workspace walkthrough.
+- Dedicated Videos page (`/videos/`) with a playlist for the full application tour and the AI Workspace walkthrough, deep links (`/videos/#app-tour`, `/videos/#ai-workspace`), download and copy-link actions, and a homepage teaser.
 - Animated scroll reveals that respect `prefers-reduced-motion`.
 - Keyboard-operable showcase tabs and FAQ accordions.
 - Downloads page backed by the public GitHub Releases REST API.
@@ -31,8 +31,12 @@ Opening the HTML files directly with `file://` may prevent the browser from call
 
 ## Product walkthrough videos
 
-The homepage has two distinct video sections: a full KubeDock application overview and a focused AI Workspace walkthrough. The full app video is stored through Git LFS at `assets/video/kubedock-explainer.mp4` and is served through GitHub's LFS media endpoint so the static page receives the actual MP4 rather than the small Git LFS pointer file. The AI Workspace clip is served from `assets/video/kubedock-ai-workspace.mp4`.
+Videos live on their own page at `videos/`. The homepage shows only a lightweight teaser (poster images, no video downloads) that links there. Poster frames are in `assets/img/`; the videos are plain MP4 files:
 
+- `assets/video/kubedock-explainer-web.mp4` — full application tour
+- `assets/video/kubedock-ai-workspace.mp4` — AI Workspace walkthrough
+
+To add a video, drop the MP4 and a poster image into `assets/`, then add an entry to the `library` array in `assets/js/videos.js` and a matching playlist button in `videos/index.html`. Old homepage anchors (`/#video`, `/#full-app-tour`) redirect to the new page.
 
 ## Release integration
 
