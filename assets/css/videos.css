@@ -98,3 +98,16 @@
   .playlist-item:hover .playlist-thumb img,.teaser-card:hover .teaser-media img{transform:none}
   .playlist-item:hover .thumb-play,.teaser-card:hover .teaser-play{scale:1}
 }
+
+@media(max-width:900px){.theatre{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:680px){
+ .videos-hero{padding-top:38px}
+ .videos-hero h1{font-size:clamp(34px,9vw,48px)}
+ .theatre,.theatre-main,.playlist,.covers-grid,.teaser-grid{min-width:0;max-width:100%}
+ .playlist-item{grid-template-columns:minmax(92px,34%) minmax(0,1fr);gap:10px;padding:10px}
+ .playlist-text,.playlist-text strong,.playlist-text small{min-width:0;overflow-wrap:anywhere}
+ .now-actions{display:grid;grid-template-columns:1fr;gap:9px}
+ .now-actions .button{width:100%}
+ .covers-grid,.teaser-grid{grid-template-columns:minmax(0,1fr)}
+ .video-player-shell video{width:100%;height:auto;aspect-ratio:16/9}
+}
