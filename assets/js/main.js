@@ -13,13 +13,26 @@
     toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
     toggle.setAttribute('title', open ? 'Close navigation menu' : 'Open navigation menu');
     nav?.classList.toggle('open', open);
+    document.body.classList.toggle('mobile-nav-open', open);
   });
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     nav.classList.remove('open');
+    document.body.classList.remove('mobile-nav-open');
     toggle?.setAttribute('aria-expanded', 'false');
     toggle?.setAttribute('aria-label', 'Open navigation menu');
     toggle?.setAttribute('title', 'Open navigation menu');
   }));
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && toggle?.getAttribute('aria-expanded') === 'true') {
+      nav?.classList.remove('open');
+      document.body.classList.remove('mobile-nav-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open navigation menu');
+      toggle.setAttribute('title', 'Open navigation menu');
+      toggle.focus();
+    }
+  });
 
   const tabs = [...document.querySelectorAll('.showcase-tab')];
   const panels = [...document.querySelectorAll('.showcase-content')];
