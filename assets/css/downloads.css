@@ -33,3 +33,19 @@
  .release-assets a,.release-card a{overflow-wrap:anywhere}
  .install-command{max-width:100%;overflow-x:auto;white-space:pre-wrap;overflow-wrap:anywhere}
 }
+
+
+/* Mobile release rows must remain within the viewport */
+html,body{max-width:100%;overflow-x:clip}
+@media(max-width:680px){
+ .platform-grid,.platform-card,.release-list,.release-card,.release-detail,.asset-list,.asset-item,.install-note{min-width:0;max-width:100%}
+ .release-summary{min-width:0;gap:8px;padding:14px}
+ .release-title,.release-date,.release-version{min-width:0;overflow-wrap:anywhere}
+ .release-labels{max-width:100%;gap:5px}
+ .asset-item{flex-wrap:wrap}
+ .asset-name{flex:1 1 65%;min-width:0;overflow-wrap:anywhere}
+ .asset-download{margin-left:auto}
+ .install-note{flex-wrap:wrap;gap:12px;padding:16px}
+ .install-command,.install-command code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
+ .release-controls>*{min-width:0;max-width:100%}
+}

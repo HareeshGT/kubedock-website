@@ -111,3 +111,15 @@
  .covers-grid,.teaser-grid{grid-template-columns:minmax(0,1fr)}
  .video-player-shell video{width:100%;height:auto;aspect-ratio:16/9}
 }
+
+
+/* Mobile overflow and readable playlist controls */
+@media(max-width:680px){
+ .theatre,.theatre-main,.playlist,.playlist-item,.playlist-text,.playlist-thumb{min-width:0;max-width:100%}
+ .playlist-item{grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:10px}
+ .playlist-text strong,.playlist-text small{overflow-wrap:anywhere}
+ .now-actions .button{min-height:48px;padding:0 16px}
+ .teaser-foot{align-items:flex-start;gap:8px}
+ .teaser-foot a{overflow-wrap:anywhere}
+ .video-player-shell,.product-video{max-width:100%}
+}
