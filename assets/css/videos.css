@@ -123,3 +123,13 @@
  .teaser-foot a{overflow-wrap:anywhere}
  .video-player-shell,.product-video{max-width:100%}
 }
+
+
+/* Unified playback controls and constrained player layout */
+.theatre,.theatre-main,.playlist,.playlist-item,.playlist-text,.playlist-thumb{min-width:0}
+.now-actions{gap:10px}
+.now-actions .button,.now-actions button{min-height:44px;padding-inline:16px;gap:8px;display:inline-flex;align-items:center;justify-content:center;transition:background-color .2s,border-color .2s,box-shadow .2s,transform .2s}
+.now-actions .button:hover,.now-actions button:hover,.now-actions .button:focus-visible,.now-actions button:focus-visible{border-color:#a99cff;background:#292542;box-shadow:0 0 0 2px #9b8cff22,0 7px 22px #0004}
+@media(max-width:980px){.theatre{grid-template-columns:minmax(0,1fr)}.playlist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){.playlist{grid-template-columns:minmax(0,1fr)}.now-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.now-actions .button,.now-actions button{width:100%;min-width:0;padding-inline:10px}.video-player-shell,.product-video{width:100%;max-width:100%}}
+@media(max-width:420px){.now-actions{grid-template-columns:minmax(0,1fr)}}
