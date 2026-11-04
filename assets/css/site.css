@@ -258,3 +258,80 @@ a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,s
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* Follow-up audit: mobile-first layout, contrast and interaction corrections */
+:root{--focus-ring:#d6ccff;--mobile-control-padding:16px}
+html,body{width:100%;max-width:100%;overflow-x:clip}
+*,*::before,*::after{min-width:0}
+img,video,svg,canvas,iframe{max-width:100%}
+.button{box-sizing:border-box;min-height:48px;padding:0 18px;gap:8px;white-space:normal}
+.button:focus-visible,.menu-toggle:focus-visible,.nav-links a:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px}
+.eyebrow{color:#c4b5fd}
+.tag-running,.now-badge{color:#c5f7df}
+.tag-neutral{color:#c6d8ff}
+.status-dot,.pulse{background:#6ee7b7}
+.nav-links>a{display:inline-flex;align-items:center;gap:8px}
+.hero-primary-cta{order:0}
+.open-source-meta{white-space:nowrap;gap:6px!important}
+.menu-toggle{position:relative}
+.menu-toggle span{display:block;width:19px;height:2px;border-radius:2px;background:#f3f1ff;transition:transform .2s ease,opacity .2s ease}
+.menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.menu-toggle[aria-expanded=true]::after{content:"Close menu";opacity:1}
+.mock-terminal{max-width:100%;min-width:0}
+.mock-terminal code{max-width:100%;overflow-x:auto;white-space:nowrap;scrollbar-width:thin}
+@media(max-width:900px){
+ .hero{grid-template-columns:minmax(0,1fr)}
+ .hero-visual{min-width:0;max-width:100%;overflow:hidden}
+ .orbit{width:min(580px,100%);max-width:100%}
+}
+@media(max-width:680px){
+ html,body{overflow-x:clip}
+ .wrap{width:calc(100% - 32px);max-width:100%}
+ .nav-links{gap:8px}
+ .nav-links>a{display:flex;align-items:center;gap:8px;min-height:44px;padding:12px 10px}
+ .nav-links .icon-link{justify-content:flex-start}
+ .hero{width:calc(100% - 32px);padding-top:42px;gap:8px}
+ .hero-copy,.hero-visual,.hero-bottom{min-width:0;max-width:100%}
+ .hero h1{font-size:clamp(34px,9.2vw,48px);line-height:1.13}
+ .hero .eyebrow{font-size:10px;color:#d0c5ff}
+ .gradient-text{background:none;color:#c4b5fd;-webkit-text-fill-color:#c4b5fd}
+ .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+ .hero-actions .hero-primary-cta{order:-1;min-height:54px;font-size:13px;padding:0 18px}
+ .hero-actions .button-quiet{order:initial;min-height:48px;padding:0 16px;background:transparent;border:1px solid #7771a8;color:#e2e2f4}
+ .hero-actions .button{width:100%;justify-content:center}
+ .hero-meta{display:flex;align-items:center;gap:10px 14px}
+ .hero-meta>span{line-height:1.5}
+ .open-source-meta{white-space:nowrap;flex:0 0 auto}
+ .hero-visual{min-height:260px;overflow:hidden;contain:paint}
+ .app-window{width:100%;max-width:100%;min-width:0;transform:none;animation:none}
+ .mock-sidebar{display:none}
+ .window-body{min-height:0}
+ .mock-main{width:100%;min-width:0;padding:12px}
+ .mock-heading,.mock-stats,.mock-row{min-width:0}
+ .mock-heading h3,.mock-row b,.mock-row small{overflow-wrap:anywhere}
+ .mock-terminal code{display:block;overflow-x:auto;white-space:pre;max-width:100%;padding-bottom:9px}
+ .float-chip{max-width:68%;padding:8px 10px}
+ .chip-top{right:2px;top:0}
+ .chip-bottom{left:2px;bottom:0}
+ .hero-bottom{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+ .hero-bottom>span{max-width:100%}
+ .tech-rail{display:flex;flex-wrap:wrap;gap:8px 14px}
+ .feature-grid,.integration-rail,.ai-detail-grid,.faq-layout{min-width:0}
+ .feature-card,.showcase-content,.showcase-art,.security-panel,.start-panel{min-width:0;max-width:100%}
+ .showcase-art{overflow-x:auto;overscroll-behavior-x:contain}
+ .art-table{min-width:420px;max-width:none}
+ .footer-links{min-width:0}
+ .button,.button-quiet,.button-primary{padding-inline:16px}
+}
+@media(max-width:420px){
+ .wrap,.hero{width:calc(100% - 28px)}
+ .hero-visual{min-height:245px}
+ .float-chip{max-width:65%}
+ .hero-meta{column-gap:9px}
+ .open-source-meta{font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .menu-toggle span{transition:none}
+}
