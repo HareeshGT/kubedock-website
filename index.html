@@ -18,7 +18,7 @@
   <header class="site-header" id="top">
     <nav class="nav wrap" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="KubeDock home"><img src="https://raw.githubusercontent.com/HareeshGT/KubeDock/main/KubeDock.ico" alt="KubeDock" class="brand-icon"><span>KubeDock</span></a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation"><span></span><span></span></button>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu" title="Open navigation menu"><span></span><span></span></button>
       <div class="nav-links" id="nav-links">
         <a href="#features">Features</a><a href="#showcase">Explore</a><a href="videos/">Videos</a><a href="#ai">AI Ops</a><a href="#security">Security</a><a href="#faq">FAQ</a>
         <a class="nav-download" href="downloads/">Downloads <span aria-hidden="true">↗</span></a>
@@ -43,7 +43,7 @@
             <aside class="mock-sidebar"><div class="mock-logo">K</div><span class="side-active">⌘</span><span>◈</span><span>▣</span><span>⇄</span><span>⌁</span><div class="side-bottom">⚙</div></aside>
             <div class="mock-main"><div class="mock-heading"><div><small>WORKSPACE / CLUSTER</small><h3>Infrastructure overview</h3></div><span class="cluster-pill"><i></i> dev-cluster</span></div>
               <div class="mock-stats"><div><span>Nodes</span><strong>— <small>live</small></strong><div class="mini-line line-a"></div></div><div><span>Workloads</span><strong>Pods & services</strong><div class="mini-bars"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div>
-              <div class="mock-section-title">Recent workloads <span>Cluster view</span></div>
+              <div class="mock-section-title">Recent workloads <span title="Browse cluster resources and workloads">Cluster resource view</span></div>
               <div class="mock-row"><span class="workload-icon">◈</span><span><b>api-service</b><small>Deployment · default</small></span><em class="tag-running">Running</em></div>
               <div class="mock-row"><span class="workload-icon purple">▦</span><span><b>worker-pool</b><small>Pods · production</small></span><em class="tag-running">Healthy</em></div>
               <div class="mock-row"><span class="workload-icon blue">⌁</span><span><b>metrics-agent</b><small>DaemonSet · monitoring</small></span><em class="tag-neutral">Observe</em></div>
@@ -52,7 +52,7 @@
           </div>
           <div class="window-footer"><span><i></i> Workspace preview</span><span>Illustrative UI · not live data</span></div>
         </div>
-        <div class="float-chip chip-top"><span class="chip-icon">⌘</span><span><b>Cluster workflows</b><small>Inspect · act · verify</small></span></div>
+        <div class="float-chip chip-top"><span class="chip-icon">⌘</span><span><b title="Inspect, manage and verify Kubernetes workloads">Kubernetes workflows</b><small>Inspect · act · verify</small></span></div>
         <div class="float-chip chip-bottom"><span class="chip-icon chip-ai">✳</span><span><b>AI Operations</b><small>Evidence-first insights</small></span></div>
       </div>
       <div class="hero-bottom"><span>BUILT FOR THE REAL WORK OF OPERATING SYSTEMS</span><div class="tech-rail"><span>◈ Kubernetes</span><span>▣ Docker</span><span>⌁ SSH / SFTP</span><span>✳ AI-assisted ops</span></div></div>
