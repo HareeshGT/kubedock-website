@@ -49,3 +49,16 @@ html,body{max-width:100%;overflow-x:clip}
  .install-command,.install-command code{max-width:100%;white-space:pre-wrap;overflow-wrap:anywhere}
  .release-controls>*{min-width:0;max-width:100%}
 }
+
+
+/* Release catalogue narrow viewport constraints */
+.platform-grid,.platform-card,.release-list,.release-card,.release-detail,.asset-list,.asset-item,.install-note,.release-controls{min-width:0;max-width:100%}
+.release-title,.release-version,.asset-name{overflow-wrap:anywhere}.release-body{overflow:auto;max-width:100%}
+.install-command{max-width:100%;overflow-x:auto}
+@media(max-width:680px){
+ .platform-grid{grid-template-columns:minmax(0,1fr)}
+ .release-controls{display:grid;grid-template-columns:minmax(0,1fr)}
+ .release-controls>*,.search-box,.filter-label,.refresh-button{min-width:0;max-width:100%;width:100%}
+ .release-summary{flex-wrap:wrap;gap:8px}.release-labels{margin-left:0;justify-content:flex-start}
+ .asset-item{flex-wrap:wrap}.asset-name{flex:1 1 65%;min-width:0}.install-note{flex-wrap:wrap;gap:12px}
+}
