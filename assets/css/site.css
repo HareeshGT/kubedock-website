@@ -335,3 +335,86 @@ img,video,svg,canvas,iframe{max-width:100%}
 @media(prefers-reduced-motion:reduce){
  .menu-toggle span{transition:none}
 }
+
+
+/* DIS responsive audit corrections */
+:root{--kd-s1:8px;--kd-s2:16px;--kd-s3:24px;--kd-status-muted:#b6bfd4}
+html,body{max-width:100%}body{overflow-x:clip}
+img,video,iframe,canvas,svg{max-width:100%}
+.wrap,main,section,article,header,footer,nav,aside{min-width:0}
+.hero h1{font-weight:800}.hero-lede,.videos-hero p{line-height:1.5}
+.mock-section-title,.mock-section-title>span,.tree-line,.feature-top,.workflow-card-top{gap:var(--kd-s1)}
+.mock-section-title{align-items:center}
+.mock-terminal{min-width:0;max-width:100%;overflow:hidden}
+.mock-terminal code{display:block;max-width:100%;overflow-x:auto;overflow-y:hidden;white-space:pre;scrollbar-width:thin;overscroll-behavior-x:contain}
+.tag-running,.now-badge{color:var(--kd-status-muted)}.tag-neutral{color:#c6d8ff}
+.workload-icon,.feature-icon{flex:0 0 auto}
+.button,.button-small,.now-actions .button,.now-actions button,.now-actions a{box-sizing:border-box;min-height:44px;padding-inline:16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background-color .2s,border-color .2s,box-shadow .2s,transform .2s,color .2s}
+.now-actions .button-small{min-height:44px}
+.now-actions button:hover,.now-actions a:hover,.now-actions button:focus-visible,.now-actions a:focus-visible{border-color:#a99cff;background-color:#292542;box-shadow:0 0 0 2px #9b8cff22,0 7px 22px #0004}
+.now-actions .button:active{transform:translateY(1px)}
+@media(max-width:980px){
+ .hero,.showcase-content,.video-intro,.ai-detail-grid{min-width:0}
+ .hero-visual{width:100%;max-width:100%;margin-inline:auto;overflow:hidden}
+ .app-window{width:min(100%,530px);max-width:100%}
+ .orbit{width:min(580px,100%);max-width:100%}
+ .feature-grid,.workflow-grid,.integration-rail{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:820px){
+ .wrap{width:min(var(--max),calc(100% - 40px))}
+ .nav{gap:12px}.nav-links{gap:14px;flex-wrap:wrap;justify-content:flex-end}
+ .hero{grid-template-columns:minmax(0,1fr)}
+ .theatre{grid-template-columns:minmax(0,1fr)}
+ .playlist,.covers-grid,.teaser-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .playlist-head{grid-column:1/-1}
+}
+@media(max-width:680px){
+ .wrap{width:calc(100% - 32px);max-width:100%}
+ .nav{height:66px}.menu-toggle{display:inline-flex;position:relative}
+ .nav-links{display:none;position:absolute;top:calc(100% + 1px);left:0;right:0;z-index:55;padding:12px 16px 18px;gap:6px;background:#0e101b;border-bottom:1px solid var(--line);box-shadow:0 18px 35px #0008;flex-direction:column;align-items:stretch;flex-wrap:nowrap}
+ .nav-links.open{display:flex}.nav-links>a{display:flex;align-items:center;gap:8px;min-height:44px;padding:11px 10px}
+ .nav-links .nav-download{margin-top:4px;text-align:center}.nav-links .icon-link{justify-content:flex-start}
+ .menu-toggle span{width:18px;height:2px;display:block;background:currentColor;transition:transform .2s}
+ .menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}
+ .menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+ .menu-toggle[aria-expanded=true]{border-color:#b2a7ff;background:#292542}
+ .hero{padding-top:42px;gap:14px}.hero h1{font-weight:800;line-height:1.12;overflow-wrap:anywhere}
+ .hero-lede,.videos-hero p{line-height:1.5}
+ .hero-visual{min-height:0;padding:26px 0 28px;overflow:hidden;contain:paint}
+ .app-window{width:100%;max-width:100%;transform:none;animation:none}
+ .window-body{min-height:0}.mock-sidebar{display:none}.mock-main{width:100%;min-width:0;padding:14px 12px}
+ .mock-row,.mock-heading,.mock-stats{min-width:0}.mock-row b,.mock-row small,.mock-heading h3{overflow-wrap:anywhere}
+ .mock-terminal{overflow:hidden}.mock-terminal code{display:block;max-width:100%;overflow-x:auto;white-space:pre}
+ .hero-actions{display:flex;flex-direction:column;align-items:stretch;gap:12px}
+ .hero-actions .hero-primary-cta{order:-1;min-height:52px}.hero-actions .button{width:100%}
+ .open-source-meta{white-space:nowrap}
+ .feature-grid,.workflow-grid,.integration-rail,.covers-grid,.teaser-grid,.playlist{grid-template-columns:minmax(0,1fr)}
+ .feature-card,.workflow-card{padding:20px}.workflow-card:last-child{grid-column:auto}
+ .showcase-content{padding:20px}.showcase-art{min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+ .art-table{min-width:420px;max-width:none}
+ .video-section,.video-teaser{padding:58px 0 64px}
+ .video-intro{grid-template-columns:minmax(0,1fr);gap:12px}
+ .video-player-shell,.product-video{width:100%;max-width:100%}.product-video{display:block;height:auto}
+ .now-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .now-actions .button,.now-actions button{width:100%;min-width:0;padding-inline:10px;font-size:11px}
+ .playlist-item{grid-template-columns:minmax(0,34%) minmax(0,1fr);gap:10px}
+ .playlist-text,.playlist-text strong,.playlist-text small{min-width:0;overflow-wrap:anywhere}
+ .download-hero{padding-top:48px}.platform-grid{grid-template-columns:minmax(0,1fr)}
+ .section-title-row,.release-heading{align-items:flex-start;flex-direction:column}
+ .release-controls{display:grid;grid-template-columns:minmax(0,1fr)}
+ .release-controls>*,.search-box,.filter-label,.refresh-button{width:100%;min-width:0;max-width:100%}
+ .release-summary{flex-wrap:wrap;gap:8px;padding:14px}
+ .release-title,.release-date,.release-version{min-width:0;overflow-wrap:anywhere}
+ .release-labels{max-width:100%;margin-left:0;justify-content:flex-start}
+ .asset-item{flex-wrap:wrap;min-width:0}.asset-name{flex:1 1 65%;min-width:0;overflow-wrap:anywhere}
+ .install-note{flex-wrap:wrap;padding:18px;gap:12px}
+ .install-command{max-width:100%;overflow-x:auto}
+}
+@media(max-width:420px){
+ .wrap{width:calc(100% - 28px)}.hero h1{font-size:clamp(34px,9.2vw,48px)}
+ .hero-visual{padding-block:22px}.mock-heading h3{font-size:12px}
+ .mock-row{gap:6px}.mock-row b{font-size:8px}.mock-row small{font-size:7px}.mock-row em{font-size:7px}
+ .float-chip{max-width:65%}.now-actions{grid-template-columns:minmax(0,1fr)}
+ .playlist-item{grid-template-columns:minmax(0,32%) minmax(0,1fr)}
+}
+@media(prefers-reduced-motion:reduce){.menu-toggle span,.now-actions .button{transition:none}}
